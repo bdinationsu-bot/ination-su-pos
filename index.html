@@ -1,4 +1,20 @@
-<!doctype html><html lang="my"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>i-Nation Su Management System</title><link rel="stylesheet" href="style.css"></head><body>
+<!doctype html><html lang="my"><<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management System</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Supabase Cloud Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!-- မိမိ၏ မူလ HTML Code များ ဒီအတိုင်း ရှိပါစေ -->
+    
+    <script src="app.js"></script>
+</body>
+</html>><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>i-Nation Su Management System</title><link rel="stylesheet" href="style.css"></head><body>
 <div id="loginScreen" class="login-screen"><div class="login-box"><img class="login-logo" src="logo.png" alt="i-Nation Su Logo"><div class="login-brand">i-Nation Su</div><p>Management System</p><label>Username<input id="loginUser" type="text" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" tabindex="1" placeholder="admin"></label><label>Password<input id="loginPass" type="text" name="password" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" inputmode="numeric" tabindex="2" placeholder="1234"></label><button id="loginBtn" class="primary full">Login</button><div id="loginError" class="login-error"></div><div class="login-help">Demo: admin / 1234 &nbsp; | &nbsp; staff / 1234</div></div></div>
 <div id="systemShell" class="hidden"><aside class="sidebar"><div class="brand"><img class="sidebar-logo" src="logo.png" alt="i-Nation Su Logo"><span>i-Nation Su</span></div>
 <button class="nav-btn" data-page="dashboard">📊 Dashboard</button><button class="nav-btn" data-page="inventory">📦 Inventory</button><button class="nav-btn" data-page="purchases">🛒 Purchases</button><button class="nav-btn" data-page="sales">💰 Sales</button><button class="nav-btn" data-page="cashIncome">💵 Cash Income</button><button class="nav-btn" data-page="tradein">🔄 Trade-in / Buy-back</button><button class="nav-btn" data-page="customers">👥 Customers</button><button class="nav-btn" data-page="expenses">💸 Expenses</button><button class="nav-btn" data-page="reports">📈 Reports</button><button class="nav-btn" data-page="warranty">🛡️ Warranty / Returns</button><button class="nav-btn" data-page="users">👤 Users</button><button class="nav-btn" data-page="backup">💾 Backup / Restore</button><button class="nav-btn" data-page="settings">⚙️ Settings</button></aside><main class="main"><div id="app"></div></main></div>
