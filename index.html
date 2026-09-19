@@ -1,0 +1,22 @@
+<!doctype html><html lang="my"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>i-Nation Su Management System</title><link rel="stylesheet" href="style.css"></head><body>
+<div id="loginScreen" class="login-screen"><div class="login-box"><img class="login-logo" src="logo.png" alt="i-Nation Su Logo"><div class="login-brand">i-Nation Su</div><p>Management System</p><label>Username<input id="loginUser" type="text" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" tabindex="1" placeholder="admin"></label><label>Password<input id="loginPass" type="text" name="password" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" inputmode="numeric" tabindex="2" placeholder="1234"></label><button id="loginBtn" class="primary full">Login</button><div id="loginError" class="login-error"></div><div class="login-help">Demo: admin / 1234 &nbsp; | &nbsp; staff / 1234</div></div></div>
+<div id="systemShell" class="hidden"><aside class="sidebar"><div class="brand"><img class="sidebar-logo" src="logo.png" alt="i-Nation Su Logo"><span>i-Nation Su</span></div>
+<button class="nav-btn" data-page="dashboard">📊 Dashboard</button><button class="nav-btn" data-page="inventory">📦 Inventory</button><button class="nav-btn" data-page="purchases">🛒 Purchases</button><button class="nav-btn" data-page="sales">💰 Sales</button><button class="nav-btn" data-page="cashIncome">💵 Cash Income</button><button class="nav-btn" data-page="tradein">🔄 Trade-in / Buy-back</button><button class="nav-btn" data-page="customers">👥 Customers</button><button class="nav-btn" data-page="expenses">💸 Expenses</button><button class="nav-btn" data-page="reports">📈 Reports</button><button class="nav-btn" data-page="warranty">🛡️ Warranty / Returns</button><button class="nav-btn" data-page="users">👤 Users</button><button class="nav-btn" data-page="backup">💾 Backup / Restore</button><button class="nav-btn" data-page="settings">⚙️ Settings</button></aside><main class="main"><div id="app"></div></main></div>
+<div id="modal" class="modal hidden"><div class="modal-box"><div class="modal-head"><h2 id="modalTitle">Add iPhone</h2><button id="closeModal" class="icon-btn">✕</button></div><div id="modalContent"></div></div></div>
+<div id="invoiceModal" class="modal hidden"><div class="invoice-box"><div id="invoicePrintArea"></div><div class="invoice-actions"><button id="editInvoice" class="secondary">✏️ Edit Invoice</button><button id="previewPdfInvoice" class="primary">📄 PDF Preview</button><button id="printInvoice" class="primary">🖨️ Print Invoice</button><button id="closeInvoice" class="secondary">Close</button></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script><script>
+(function(){
+  function bindLogin(){
+    var pass=document.getElementById("loginPass"), user=document.getElementById("loginUser");
+    if(!pass) return;
+    pass.removeAttribute("readonly"); pass.disabled=false; pass.tabIndex=2;
+    pass.addEventListener("click",function(){pass.focus();});
+    pass.addEventListener("mousedown",function(e){e.stopPropagation();});
+    pass.addEventListener("keydown",function(e){if(e.key==="Enter"){var b=document.getElementById("loginBtn");if(b)b.click();}});
+    if(user) user.addEventListener("keydown",function(e){if(e.key==="Enter")pass.focus();});
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",bindLogin); else bindLogin();
+})();
+</script>
+<script src="app.js" defer></script><div id="pdfPreviewModal" class="modal hidden"><div class="pdf-preview-box"><div class="pdf-preview-head"><b>Invoice PDF Preview</b><div><button id="downloadPdfInvoice" class="primary small">💾 Save PDF</button> <button id="closePdfPreview" class="secondary small">Close</button></div></div><iframe id="pdfPreviewFrame" title="Invoice PDF Preview"></iframe></div></div>
+</body></html>
