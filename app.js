@@ -1,5 +1,14 @@
 // Supabase Cloud Config
-const SUPABASE_URL = 'https://sroelnfsolkscsnhmzev.supabase.co';
+const SUPABASE_URL = // SUPABASE_URL နဲ့ SUPABASE_KEY ကို တစ်ကြိမ်ပဲ ကြေညာပါ
+if (typeof SUPABASE_URL === 'undefined') {
+    var SUPABASE_URL = 'https://sroelnfsolkscsnhmzev.supabase.co';
+    var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNyb2VsbmZzb2xrc2NzbmhtemV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3OTExOTUsImV4cCI6MjEwNTM2NzE5NX0.08YPxb91t228-dM6tLr2OATdsDcxFyINVnw15fkqeNM';
+}
+
+// Client ကို တစ်ကြိမ်သာ Initialize လုပ်ပါ
+if (typeof supabaseClient === 'undefined') {
+    var supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+}
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNyb2VsbmZzb2xrc2NzbmhtemV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3OTExOTUsImV4cCI6MjEwNTM2NzE5NX0.08YPxb91t228-dM6tLr2OATdsDcxFyINVnw15fkqeNM';
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
